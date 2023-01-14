@@ -1,2 +1,4 @@
-package definitions;public class LindenStepDefs {
+package definitions;
+
+public class LindenStepDefs {
 }
