@@ -229,4 +229,9 @@ public class PredefinedStepDefs {
         String actualText = getDriver().findElement(By.xpath(xpath)).getText();
         assertThat(actualText).isEqualTo("STUDENT");
     }
+
+    @Then("I click on the browser back button")
+    public void iClickOnTheBrowserBackButton() {
+        getDriver().navigate().back();
+    }
 }
