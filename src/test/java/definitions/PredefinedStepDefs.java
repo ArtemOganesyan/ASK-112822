@@ -229,4 +229,8 @@ public class PredefinedStepDefs {
         String actualText = getDriver().findElement(By.xpath(xpath)).getText();
         assertThat(actualText).isEqualTo("STUDENT");
     }
+
+    @And("I type {string}")
+    public void iType(String arg0) {
+    }
 }
