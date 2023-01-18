@@ -27,3 +27,17 @@
       And I click on element with xpath "//button[@type='submit']"
       And I wait for 2 sec
       Then element with xpath "//mat-error[contains(text(),'This field is required')]" should be displayed
+
+    @gcf_test3
+    Scenario: Group Code Field Minimum Length 1
+      Given I open url "http://ask-stage.portnov.com"
+      Then I click on element with xpath "//a[@href='#/registration']"
+      And I type "Test" into element with xpath "//input[@formcontrolname='firstName']"
+      And I type "Test" into element with xpath "//input[@formcontrolname='lastName']"
+      And I type "Test@test.com" into element with xpath "//input[@formcontrolname='email']"
+      And I type "1" into element with xpath "//input[@formcontrolname='group']"
+      And I type "123456" into element with xpath "//input[@formcontrolname='password']"
+      And I type "123456" into element with xpath "//input[@formcontrolname='confirmPassword']"
+      And I click on element with xpath "//button[@type='submit']"
+      And I wait for 2 sec
+      Then element with xpath "//h4[contains(text(),'You have been Registered.')]" should be displayed
