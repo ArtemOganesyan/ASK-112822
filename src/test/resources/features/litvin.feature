@@ -20,3 +20,5 @@
       And I type "marinai$123@gmail.com" into element with xpath "//input[@formcontrolname='email']"
       And I type "ABC123" into element with xpath "//input[@formcontrolname='group']"
       Then element with xpath "//*[text()='Should be a valid email address']" should not be present
+      # test change
+
