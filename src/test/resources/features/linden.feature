@@ -14,7 +14,7 @@
       And I wait for 2 sec
       Then element with xpath "//h4[contains(text(),'You have been Registered.')]" should be displayed
 
-    @gcf_test1
+    @gcf_test2
     Scenario: Group Code Field Allowable Characters: Alphanumeric and Special Characters (Positive)
       Given I open url "http://ask-stage.portnov.com"
       Then I click on element with xpath "//a[@href='#/registration']"
