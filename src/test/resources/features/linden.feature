@@ -15,7 +15,7 @@
       Then element with xpath "//h4[contains(text(),'You have been Registered.')]" should be displayed
 
     @gcf_test2
-    Scenario: Group Code Field Allowable Characters: Alphanumeric and Special Characters (Positive)
+    Scenario: Group Code Field Required, Cannot be Empty
       Given I open url "http://ask-stage.portnov.com"
       Then I click on element with xpath "//a[@href='#/registration']"
       And I type "Test" into element with xpath "//input[@formcontrolname='firstName']"
