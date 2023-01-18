@@ -230,7 +230,8 @@ public class PredefinedStepDefs {
         assertThat(actualText).isEqualTo("STUDENT");
     }
 
-    @And("I type {string}")
-    public void iType(String arg0) {
+    @Then("I click on the browser back button")
+    public void iClickOnTheBrowserBackButton() {
+        getDriver().navigate().back();
     }
 }
