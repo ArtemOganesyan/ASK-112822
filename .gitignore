@@ -37,8 +37,7 @@ hs_err_pid*
 
 .DS_Store
 .idea
+.vscode
 *.iws
 *.iml
 *.ipr
-
-
