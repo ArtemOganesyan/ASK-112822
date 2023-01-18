@@ -10,6 +10,7 @@ Feature: Student - Settings - Password
     Then I wait for element with xpath "//a[@href='/#/settings']" to be present
     Then I wait for 3 sec
     Then I click on element with xpath "//a[@href='/#/settings']"
+# hello
 
 
   @StudentChangePassword
