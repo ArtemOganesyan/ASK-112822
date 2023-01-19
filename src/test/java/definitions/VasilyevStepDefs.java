@@ -5,15 +5,16 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import support.Helper;
 
 import java.io.File;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
 
@@ -291,35 +292,55 @@ public class VasilyevStepDefs {
         new WebDriverWait(getDriver(), 10, 200).until(ExpectedConditions.elementToBeClickable(By.xpath(pageObject.getValue(controlName))));
     }
 
+    @Then("I delete all assignments related to this test-set AV")
+    public void iDeleteAllAssignmentsRelatedToThisTestSetAV() throws InterruptedException {
+        String threeDots = "(//span[contains(text(),'SAG')])[1]//ancestor::mat-expansion-panel//mat-icon[text()='more_vert']";
+        String delButton = "//span[contains(text(),'Delete Assignment')]//ancestor::button";
+        String modalDelButton = "//ac-modal-confirmation/h1[text()='Confirmation']/..//button//span[contains(text(),'Delete')]//ancestor::button";
+
+        while(getAmountOfAssignments()> 0){
+            getDriver().findElement(By.xpath(threeDots)).click();
+            getDriver().findElement(By.xpath(delButton)).click();
+            getDriver().findElement(By.xpath(delButton)).click();
+            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(By.xpath(modalDelButton)));
+            getDriver().findElement(By.xpath(modalDelButton)).click();
+        }
+    }
+
+    private int getAmountOfAssignments() throws InterruptedException {
+        String anySagAssignment = "//span[contains(text(),'SAG')]";
+        Thread.sleep(2*200L);
+        return getDriver().findElements(By.xpath(anySagAssignment)).size();
+    }
+
     @Then("I delete all quizzes related to this test-set AV")
     public void iDeleteAllQuizzesRelatedToThisTestSet() throws InterruptedException {
         String quizPanelXpath = "//mat-panel-title[contains(text(),'SAG')][1]//ancestor::mat-expansion-panel";
         String delBtnXpath = "//mat-panel-title[contains(text(),'SAG')][1]//ancestor::mat-expansion-panel//button/span[contains(text(), 'Delete')]//ancestor::button";
         String modalDelBtnXpath = "//ac-modal-confirmation//button/span[text()='Delete']//ancestor::button";
-        WebDriverWait wdWait = new WebDriverWait(getDriver(), 5, 200);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 5, 200);
 
         while (getAmountOfQuizzes() > 0) {
-            wdWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(quizPanelXpath)));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(quizPanelXpath)));
             getDriver().findElement(By.xpath(quizPanelXpath)).click();
-            wdWait.until(ExpectedConditions.elementToBeClickable(By.xpath(delBtnXpath)));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(delBtnXpath)));
             getDriver().findElement(By.xpath(delBtnXpath)).click();
-            wdWait.until(ExpectedConditions.elementToBeClickable(By.xpath(modalDelBtnXpath)));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(modalDelBtnXpath)));
             getDriver().findElement(By.xpath(modalDelBtnXpath)).click();
         }
     }
 
-    private int getAmountOfQuizzes() {
-        WebDriverWait wdWait = new WebDriverWait(getDriver(), 5, 200);
-        wdWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(pageObject.getValue("List of Quizzes title"))));
+    private int getAmountOfQuizzes() throws InterruptedException {
+        Thread.sleep(2 * 1000L);
         return getDriver().findElements(By.xpath(pageObject.getValue("SAG*"))).size();
     }
 
     @Then("I log out AV")
     public void iLogOutAV() throws InterruptedException {
         getDriver().findElement(By.xpath(pageObject.getValue("Log Out button"))).click();
-        Thread.sleep(1000L);
+        Thread.sleep(1 * 1000L);
         getDriver().findElement(By.xpath(pageObject.getValue("Log Out button in modal"))).click();
-        Thread.sleep(3 * 1000L);
+        Thread.sleep(1 * 1000L);
     }
 
     @Then("I center to the element {string} and click AV")
@@ -328,5 +349,16 @@ public class VasilyevStepDefs {
         Actions actions = new Actions(getDriver());
         actions.moveToElement(element).click().perform();
     }
+
+    public void waitForPageLoaded(int waitTime) {
+        ExpectedCondition<Boolean> expectation = drv -> ((JavascriptExecutor) drv).executeScript("return document.readyState").equals("complete");
+        WebDriverWait wait = new WebDriverWait(getDriver(), waitTime);
+        try {
+            wait.until(expectation);
+        } catch (Throwable error) {
+            Assert.fail("Timeout waiting for Page Load Request to complete.");
+        }
+    }
+
 }
 
