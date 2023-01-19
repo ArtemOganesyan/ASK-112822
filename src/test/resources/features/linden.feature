@@ -77,3 +77,19 @@
       And I click on element with xpath "//button[@type='submit']"
       And I wait for 2 sec
       Then element with xpath "//mat-error[contains(text(),'Too long')]" should be displayed
+
+    @gcf_test6
+    Scenario: Group Code Field No White Space
+      Given I open url "http://ask-stage.portnov.com"
+      And I wait for 2 sec
+      Then I click on element with xpath "//a[@href='#/registration']"
+      And I wait for 2 sec
+      And I type "Test" into element with xpath "//input[@formcontrolname='firstName']"
+      And I type "Test" into element with xpath "//input[@formcontrolname='lastName']"
+      And I type "Test@test.com" into element with xpath "//input[@formcontrolname='email']"
+      And I type "    " into element with xpath "//input[@formcontrolname='group']"
+      And I type "123456" into element with xpath "//input[@formcontrolname='password']"
+      And I type "123456" into element with xpath "//input[@formcontrolname='confirmPassword']"
+      And I click on element with xpath "//button[@type='submit']"
+      And I wait for 2 sec
+      Then element with xpath "//mat-error[contains(text(), 'Whitespaces are not allowed')]" should be displayed
