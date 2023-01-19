@@ -7,7 +7,7 @@ Feature: Multiple-Choice Question - Text
     Then I type "teacher email" into element "Email field" AV
     Then I type "teacher password" into element "Password field" AV
     Then I click on element "Submit button" AV
-    Then I wait for element "James Sallivan teacher name" to be present AV
+    Then I wait for element "James Sullivan teacher name" to be present AV
     Then I click on element "Quizzes link" AV
     Then I wait for element "List of Quizzes title" to be present AV
     Then I click on element "Create New Quiz link" AV
