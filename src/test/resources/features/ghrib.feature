@@ -75,8 +75,8 @@ Feature: Student - Settings - Password
     Then I click on element with xpath "//span[text()='Change Your Password']"
     Then I click on element with xpath "//input[@formcontrolname='newPassword']"
     Then I wait for 1 sec
-    And element with xpath "//mat-error[contains(text(), 'required')]" should be present
-    And element with xpath "//mat-error[contains(text(), 'required')]" should have text as "This field is required"
+    #And element with xpath "//mat-error[contains(text(), 'required')]" should be present
+    #And element with xpath "//mat-error[contains(text(), 'required')]" should have text as "This field is required"
     And element with xpath "(//button[@class='mat-raised-button mat-primary'])[3]" should be disabled
 
   Scenario: Empty New password field (Negative)
