@@ -1,6 +1,5 @@
 package definitions;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -118,25 +117,25 @@ public class VasilyevPageObject {
         vars.put("modal Ok button", "//ac-modal-notification//span[contains(text(),'Ok')]//ancestor::button");
         vars.put("My Grades link", "//h5[contains(text(),'My Grades')]//ancestor::a");
         vars.put("My Grades list title", "//h4[contains(text(),'My Grades')]");
-        vars.put("SAG1 Status", "//table//td[text()='SAG1']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG2 Status", "//table//td[text()='SAG2']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG3 Status", "//table//td[text()='SAG3']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG4 Status", "//table//td[text()='SAG4']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG5 Status", "//table//td[text()='SAG5']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG6 Status", "//table//td[text()='SAG6']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG7 Status", "//table//td[text()='SAG7']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG8 Status", "//table//td[text()='SAG8']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG1 Graded at", "//table//td[text()='SAG1']//ancestor::table//td[2]");
-        vars.put("SAG2 Graded at", "//table//td[text()='SAG2']//ancestor::table//td[2]");
-        vars.put("SAG3 Graded at", "//table//td[text()='SAG3']//ancestor::table//td[2]");
-        vars.put("SAG4 Graded at", "//table//td[text()='SAG4']//ancestor::table//td[2]");
-        vars.put("SAG5 Graded at", "//table//td[text()='SAG5']//ancestor::table//td[2]");
-        vars.put("SAG6 Graded at", "//table//td[text()='SAG6']//ancestor::table//td[2]");
-        vars.put("SAG7 Graded at", "//table//td[text()='SAG7']//ancestor::table//td[2]");
-        vars.put("SAG8 Graded at", "//table//td[text()='SAG8']//ancestor::table//td[2]");
+        vars.put("SAG1 Status", "//table//td[text()='SAG1']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG2 Status", "//table//td[text()='SAG2']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG3 Status", "//table//td[text()='SAG3']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG4 Status", "//table//td[text()='SAG4']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG5 Status", "//table//td[text()='SAG5']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG6 Status", "//table//td[text()='SAG6']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG7 Status", "//table//td[text()='SAG7']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG8 Status", "//table//td[text()='SAG8']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG1 Graded at", "//table//td[text()='SAG1']//ancestor::tr//td[2]");
+        vars.put("SAG2 Graded at", "//table//td[text()='SAG2']//ancestor::tr//td[2]");
+        vars.put("SAG3 Graded at", "//table//td[text()='SAG3']//ancestor::tr//td[2]");
+        vars.put("SAG4 Graded at", "//table//td[text()='SAG4']//ancestor::tr//td[2]");
+        vars.put("SAG5 Graded at", "//table//td[text()='SAG5']//ancestor::tr//td[2]");
+        vars.put("SAG6 Graded at", "//table//td[text()='SAG6']//ancestor::tr//td[2]");
+        vars.put("SAG7 Graded at", "//table//td[text()='SAG7']//ancestor::tr//td[2]");
+        vars.put("SAG8 Graded at", "//table//td[text()='SAG8']//ancestor::tr//td[2]");
         vars.put("SAG8 Details button", "//table//td[text()='SAG8']//ancestor::tr/td/a/button");
         vars.put("test result block", "//div[@class='result']/div[1]");
         vars.put("test result block underline", "//div[@class='result']/div[2]");
-//        vars.keySet().stream().map(key -> key + " : " + vars.get(key)).forEach(System.out::println);
+//      vars.keySet().stream().map(key -> key + " : " + vars.get(key)).forEach(System.out::println);
     }
 }

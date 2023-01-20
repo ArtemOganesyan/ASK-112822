@@ -298,18 +298,20 @@ public class VasilyevStepDefs {
         String delButton = "//span[contains(text(),'Delete Assignment')]//ancestor::button";
         String modalDelButton = "//ac-modal-confirmation/h1[text()='Confirmation']/..//button//span[contains(text(),'Delete')]//ancestor::button";
 
-        while(getAmountOfAssignments()> 0){
+        while (getAmountOfAssignments() > 0) {
             getDriver().findElement(By.xpath(threeDots)).click();
+            Thread.sleep(1 * 1000l);
+            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.presenceOfElementLocated(By.xpath(delButton)));
             getDriver().findElement(By.xpath(delButton)).click();
-            getDriver().findElement(By.xpath(delButton)).click();
-            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.elementToBeClickable(By.xpath(modalDelButton)));
+            Thread.sleep(1 * 1000l);
+            new WebDriverWait(getDriver(), 5).until(ExpectedConditions.presenceOfElementLocated(By.xpath(modalDelButton)));
             getDriver().findElement(By.xpath(modalDelButton)).click();
         }
     }
 
     private int getAmountOfAssignments() throws InterruptedException {
         String anySagAssignment = "//span[contains(text(),'SAG')]";
-        Thread.sleep(2*200L);
+        Thread.sleep(2 * 2000L);
         return getDriver().findElements(By.xpath(anySagAssignment)).size();
     }
 
