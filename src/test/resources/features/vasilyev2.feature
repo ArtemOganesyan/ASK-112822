@@ -449,20 +449,22 @@ Feature: Submissions - Automatically Graded
     Then I wait for element "SAG8 Go To Assessment button" to be clickable AV
     Then I click on element "SAG8 Go To Assessment button" AV
     Then I wait for element "quiz SAG8 title" to be present AV
-    Then I wait for element "Question 1/2 option a" to be clickable AV
-    Then I click on element using JavaScript "Question 1/2 option a" AV
-    Then I wait for element "Question 2/2 option s" to be clickable AV
-    Then I click on element using JavaScript "Question 2/2 option s" AV
+    Then I wait for element "Question 1/2 option s" to be clickable AV
+    Then I click on element using JavaScript "Question 1/2 option s" AV
+    Then I wait for element "Question 2/2 option a" to be clickable AV
+    Then I click on element using JavaScript "Question 2/2 option a" AV
     Then I wait for element "Submit My Answers" to be clickable AV
     Then I click on element "Submit My Answers" AV
     Then I wait for element "modal Success! title" to be visible AV
     Then I wait for element "modal Ok button" to be clickable AV
     Then I center to the element "modal Ok button" and click AV
+    Then I wait for 2 sec AV
     Then I click on element using JavaScript "My Grades link" AV
     Then I wait for element "My Grades list title" to be present AV
     Then element "SAG8 Graded at" should have text as "Automatic" AV
     Then element "SAG8 Status" should have text as "FAILED" AV
-    Then I click on element "SAG8 Details button" AV
+#    Then I wait for 2 sec AV
+    Then I click on element using JavaScript "SAG8 Details button" AV
     Then element "test result block" should contain text "ASSESSMENT FAILED" AV
     Then element "test result block underline" should contain text "failed show-stopper" AV
 

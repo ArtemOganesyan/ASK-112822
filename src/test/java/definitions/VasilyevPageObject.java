@@ -133,7 +133,7 @@ public class VasilyevPageObject {
         vars.put("SAG6 Graded at", "//table//td[text()='SAG6']//ancestor::tr//td[2]");
         vars.put("SAG7 Graded at", "//table//td[text()='SAG7']//ancestor::tr//td[2]");
         vars.put("SAG8 Graded at", "//table//td[text()='SAG8']//ancestor::tr//td[2]");
-        vars.put("SAG8 Details button", "//table//td[text()='SAG8']//ancestor::tr/td/a/button");
+        vars.put("SAG8 Details button", "//td[text()='SAG8']//ancestor::tr/td/a");
         vars.put("test result block", "//div[@class='result']/div[1]");
         vars.put("test result block underline", "//div[@class='result']/div[2]");
 //      vars.keySet().stream().map(key -> key + " : " + vars.get(key)).forEach(System.out::println);
