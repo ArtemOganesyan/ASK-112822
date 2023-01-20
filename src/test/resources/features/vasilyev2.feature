@@ -3,6 +3,7 @@ Feature: Submissions - Automatically Graded
 
   Background:
     Given I open url "ask-stage" AV
+    Then I resize window to 1920 and 1080 AV
     Then I log in as a teacher AV
     Then I wait for element "James Sullivan teacher name" to be present AV
     Then I click on element "Quizzes link" AV

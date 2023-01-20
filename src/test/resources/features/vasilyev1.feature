@@ -3,6 +3,7 @@ Feature: Multiple-Choice Question - Text
 
   Background:
     Given I open url "ask-stage" AV
+    Then I resize window to 1920 and 1080 AV
     Then I should see page title as "Assessment Control @ Portnov" AV
     Then I type "teacher email" into element "Email field" AV
     Then I type "teacher password" into element "Password field" AV
