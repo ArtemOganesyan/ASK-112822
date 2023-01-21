@@ -16,7 +16,6 @@
       And I click on element with xpath "//div[@class='controls ng-star-inserted']/button"
       And I click on element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-radio-button[3]"
       And I wait for 1 sec
-      And I take screenshot
       And I type "My first question" into element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//textarea[@formcontrolname='question']"
       And I click on element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//textarea[@placeholder='Option 1*']/../../../../..//mat-checkbox"
       And I click on element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//textarea[@placeholder='Option 1*']"
