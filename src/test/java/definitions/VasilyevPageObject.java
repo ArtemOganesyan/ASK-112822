@@ -1,5 +1,6 @@
 package definitions;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -7,7 +8,7 @@ public class VasilyevPageObject {
     private final Map<String, String> vars;
 
     VasilyevPageObject() {
-        vars = new TreeMap<>();
+        vars = new HashMap<>();
         initVars();
     }
 

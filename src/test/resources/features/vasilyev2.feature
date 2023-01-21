@@ -28,6 +28,7 @@ Feature: Submissions - Automatically Graded
     Then I click on element "Question 2 - Single-choice radio-button" AV
     Then I wait for element "Question 2 - Question field" to be present AV
     Then I type "a" into element "Question 2 - Question field" AV
+    Then I wait for 1 sec AV
     Then I type "a" into element "Question 2 - Option 1* field" AV
     Then I click on element "Question 2 - Option 1* radio-button" AV
     Then I type "s" into element "Question 2 - Option 2* field" AV
@@ -245,8 +246,10 @@ Feature: Submissions - Automatically Graded
     Then I wait for element "Title Of The Quiz field" to be present AV
     Then I type "SAG5" into element "Title Of The Quiz field" AV
     Then I click on element "Add Question button" AV
+    Then I wait for 1 sec AV
     Then I wait for element "Textual radio-button" to be present AV
     Then I click on element "Textual radio-button" AV
+    Then I wait for 2 sec AV
     Then I wait for element "Question field" to be present AV
     Then I type "a" into element "Question field" AV
     Then I click on element "Save button" AV
@@ -293,14 +296,17 @@ Feature: Submissions - Automatically Graded
     Then I wait for element "Title Of The Quiz field" to be present AV
     Then I type "SAG6" into element "Title Of The Quiz field" AV
     Then I click on element "Add Question button" AV
+    Then I wait for 1 sec AV
     Then I wait for element "Textual radio-button" to be present AV
     Then I click on element "Textual radio-button" AV
+    Then I wait for 2 sec AV
     Then I wait for element "Question field" to be present AV
     #TODO: Mistake was here: TimeoutException: Expected condition failed: waiting for element to be clickable
     Then I wait for element "Question field" to be clickable AV
     Then I type "a" into element "Question field" AV
     Then I click on element "Show-Stopper checkbox" AV
     Then I click on element "Save button" AV
+    Then I wait for 1 sec AV
     Then I wait for element "List of Quizzes title" to be present AV
     Then I wait for element "Assignments link" to be clickable AV
     Then I click on element "Assignments link" AV
@@ -360,6 +366,7 @@ Feature: Submissions - Automatically Graded
     Then I wait for element "Question 2 - Question field" to be present AV
     Then I type "d" into element "Question 2 - Question field" AV
     Then I click on element "Save button" AV
+    Then I wait for 1 sec AV
     Then I wait for element "List of Quizzes title" to be present AV
     Then I wait for element "Assignments link" to be clickable AV
     Then I click on element "Assignments link" AV
@@ -376,7 +383,8 @@ Feature: Submissions - Automatically Graded
     Then I wait for element "Give Assignment button" to be clickable AV
     Then I click on element "Give Assignment button" AV
     Then I wait for element "List of Assignments title" to be present AV
-    Then I log out AV
+    Then I log out
+    Then I wait for 1 sec AV
     #student
     Then I log in as a student AV
     Then I wait for element "Lee Burridge student name" to be present AV
@@ -424,6 +432,7 @@ Feature: Submissions - Automatically Graded
     Then I type "s" into element "Question 2 - Option 2* field" AV
     Then I move slider "quiz Passing Rate slider" for 25 clicks to the "left" AV
     Then I click on element "Save button" AV
+    Then I wait for 1 sec AV
     Then I wait for element "List of Quizzes title" to be present AV
     Then I wait for element "Assignments link" to be clickable AV
     Then I click on element "Assignments link" AV
