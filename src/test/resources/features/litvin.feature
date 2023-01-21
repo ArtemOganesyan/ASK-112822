@@ -94,7 +94,7 @@ Feature:My first email feature
     And I type "marinai$123@gmail.com" into element with xpath "//input[@formcontrolname='email']"
     And I click on element with xpath "//input[@formcontrolname='group']"
     Then element with xpath "//*[text()='Should be a valid email address']" should be present
-  @test1
+  @email-test10
   Scenario: Create 14/15/16 option quiz
     Given I open url "http://ask-stage.portnov.com"
     Then I type "invoeg@rdupi.org" into element with xpath "//input[@formcontrolname='email']"
@@ -145,6 +145,8 @@ Feature:My first email feature
     And I click on element with xpath "//button/span[contains(text(), 'Save')]"
     And I wait for 4 sec
     And I switch to new window
+
+
 
 
 
