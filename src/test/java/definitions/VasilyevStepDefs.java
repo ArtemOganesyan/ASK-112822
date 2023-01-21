@@ -362,5 +362,9 @@ public class VasilyevStepDefs {
         }
     }
 
+    @And("I print to console {string} AV")
+    public void iPrintToConsoleAV(String text) {
+        System.out.println(text);
+    }
 }
 
