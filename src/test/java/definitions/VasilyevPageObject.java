@@ -8,7 +8,7 @@ public class VasilyevPageObject {
     private final Map<String, String> vars;
 
     VasilyevPageObject() {
-        vars = new TreeMap<>();
+        vars = new HashMap<>();
         initVars();
     }
 
@@ -53,14 +53,18 @@ public class VasilyevPageObject {
         vars.put("MCQT6 quiz", "//mat-panel-title[contains(text(), 'MCQT6')]");
         //Submissions - Automatically Graded
         vars.put("Single-Choice radio-button", "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-radio-button[2]");
+        vars.put("Textual radio-button", "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-radio-button[1]");
+        vars.put("Show-Stopper checkbox", "//span[contains(text(),'Show-Stopper')]//ancestor::mat-checkbox");
         vars.put("Option 1* radio-button", "//textarea[@placeholder='Option 1*']/../../../../..//mat-radio-button");
         vars.put("Question 2 - Single-choice radio-button", "//mat-panel-title[contains(text(),'Q2')]/../../..//mat-radio-button[2]");
+        vars.put("Question 2 - Textual radio-button", "//mat-panel-title[contains(text(),'Q2')]/../../..//mat-radio-button[1]");
         vars.put("Question 2 - Question field", "//mat-panel-title[contains(text(),'Q2')]/../../..//textarea[@formcontrolname='question']");
         vars.put("Question 2 - Option 2* field", "//mat-panel-title[contains(text(),'Q2')]/../../..//textarea[@placeholder='Option 2*']");
         vars.put("Question 2 - Option 1* field", "//mat-panel-title[contains(text(),'Q2')]/../../..//textarea[@placeholder='Option 1*']");
         vars.put("Question 2 - Option 1* radio-button", "//mat-panel-title[contains(text(),'Q2')]//ancestor::mat-expansion-panel//textarea[@placeholder='Option 1*']//ancestor::mat-radio-group//mat-radio-button");
         vars.put("Question 2 - Option 2* radio-button", "//mat-panel-title[contains(text(),'Q2')]/../../..//textarea[@placeholder='Option 2*']/../../../../..//mat-radio-button");
         vars.put("Question 2 - points slider", "//mat-panel-title[contains(text(),'Q2')]/../../..//mat-slider");
+        vars.put("textual answer field","//textarea[@formcontrolname='textAnswer']");
         vars.put("quiz Passing Rate slider", "//h3[contains(text(),'Passing Rate')]/..//mat-slider");
         vars.put("Assignments link", "//a[@href='/#/assignments']");
         vars.put("List of Assignments title", "//h4[contains(text(),'List of Assignments')]");
@@ -78,7 +82,6 @@ public class VasilyevPageObject {
         vars.put("SAG6 quiz", "//mat-option/span[contains(text(), 'SAG6')]/..//self::mat-option");
         vars.put("SAG7 quiz", "//mat-option/span[contains(text(), 'SAG7')]/..//self::mat-option");
         vars.put("SAG8 quiz", "//mat-option/span[contains(text(), 'SAG8')]/..//self::mat-option");
-
         vars.put("element of quizzes list", "//mat-option/span[contains(text(), 'SAG')]");
         vars.put("SAG*", "//mat-panel-title[contains(text(),'SAG')]");
         vars.put("student checkbox", "//mat-pseudo-checkbox");
@@ -95,7 +98,6 @@ public class VasilyevPageObject {
         vars.put("SAG6 Go To Assessment button", "//td[contains(text(),'SAG6')][1]//ancestor::tr//span[contains(text(),'Go To Assessment')]//ancestor::button");
         vars.put("SAG7 Go To Assessment button", "//td[contains(text(),'SAG7')][1]//ancestor::tr//span[contains(text(),'Go To Assessment')]//ancestor::button");
         vars.put("SAG8 Go To Assessment button", "//td[contains(text(),'SAG8')][1]//ancestor::tr//span[contains(text(),'Go To Assessment')]//ancestor::button");
-
         vars.put("quiz SAG1 title", "//h4[contains(text(),'SAG1')]");
         vars.put("quiz SAG2 title", "//h4[contains(text(),'SAG2')]");
         vars.put("quiz SAG3 title", "//h4[contains(text(),'SAG3')]");
@@ -104,35 +106,37 @@ public class VasilyevPageObject {
         vars.put("quiz SAG6 title", "//h4[contains(text(),'SAG6')]");
         vars.put("quiz SAG7 title", "//h4[contains(text(),'SAG7')]");
         vars.put("quiz SAG8 title", "//h4[contains(text(),'SAG8')]");
-
-
+        vars.put("Question 1/1 option a", "//h5[text()='Question 1 / 1']//ancestor::mat-card//div[contains(text(), 'a')]//ancestor::label//input");
+        vars.put("Question 1/1 option s", "//h5[text()='Question 1 / 1']//ancestor::mat-card//div[contains(text(), 's')]//ancestor::label//input");
         vars.put("Question 1/2 option a", "//h5[text()='Question 1 / 2']//ancestor::mat-card//div[contains(text(), 'a')]//ancestor::label//input");
         vars.put("Question 1/2 option s", "//h5[text()='Question 1 / 2']//ancestor::mat-card//div[contains(text(), 's')]//ancestor::label//input");
-        vars.put("Question 2/2 option s", "//h5[text()='Question 2 / 2']//ancestor::mat-card//div[contains(text(), 's')]//ancestor::label//input");
         vars.put("Question 2/2 option a", "//h5[text()='Question 2 / 2']//ancestor::mat-card//div[contains(text(), 'a')]//ancestor::label//input");
+        vars.put("Question 2/2 option s", "//h5[text()='Question 2 / 2']//ancestor::mat-card//div[contains(text(), 's')]//ancestor::label//input");
+        vars.put("Question 2/2 textual answer field","//h5[text()='Question 2 / 2']//ancestor::mat-card//textarea[@formcontrolname='textAnswer']");
         vars.put("Submit My Answers", "//span[text()='Submit My Answers']//ancestor::button");
         vars.put("modal Success! title", "//ac-modal-notification //h1[text()='Success!']");
         vars.put("modal Ok button", "//ac-modal-notification//span[contains(text(),'Ok')]//ancestor::button");
         vars.put("My Grades link", "//h5[contains(text(),'My Grades')]//ancestor::a");
         vars.put("My Grades list title", "//h4[contains(text(),'My Grades')]");
-
-        vars.put("SAG1 Status", "//table//td[text()='SAG1']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG2 Status", "//table//td[text()='SAG2']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG3 Status", "//table//td[text()='SAG3']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG4 Status", "//table//td[text()='SAG4']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG5 Status", "//table//td[text()='SAG5']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG6 Status", "//table//td[text()='SAG6']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG7 Status", "//table//td[text()='SAG7']//ancestor::table//td[@class='result']//span");
-        vars.put("SAG8 Status", "//table//td[text()='SAG8']//ancestor::table//td[@class='result']//span");
-
-        vars.put("SAG1 Graded at", "//table//td[text()='SAG1']//ancestor::table//td[2]");
-        vars.put("SAG2 Graded at", "//table//td[text()='SAG2']//ancestor::table//td[2]");
-        vars.put("SAG3 Graded at", "//table//td[text()='SAG3']//ancestor::table//td[2]");
-        vars.put("SAG4 Graded at", "//table//td[text()='SAG4']//ancestor::table//td[2]");
-        vars.put("SAG5 Graded at", "//table//td[text()='SAG5']//ancestor::table//td[2]");
-        vars.put("SAG6 Graded at", "//table//td[text()='SAG6']//ancestor::table//td[2]");
-        vars.put("SAG7 Graded at", "//table//td[text()='SAG7']//ancestor::table//td[2]");
-        vars.put("SAG8 Graded at", "//table//td[text()='SAG8']//ancestor::table//td[2]");
-//        vars.keySet().stream().map(key -> key + " : " + vars.get(key)).forEach(System.out::println);
+        vars.put("SAG1 Status", "//table//td[text()='SAG1']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG2 Status", "//table//td[text()='SAG2']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG3 Status", "//table//td[text()='SAG3']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG4 Status", "//table//td[text()='SAG4']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG5 Status", "//table//td[text()='SAG5']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG6 Status", "//table//td[text()='SAG6']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG7 Status", "//table//td[text()='SAG7']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG8 Status", "//table//td[text()='SAG8']//ancestor::tr//td[@class='result']//span");
+        vars.put("SAG1 Graded at", "//table//td[text()='SAG1']//ancestor::tr//td[2]");
+        vars.put("SAG2 Graded at", "//table//td[text()='SAG2']//ancestor::tr//td[2]");
+        vars.put("SAG3 Graded at", "//table//td[text()='SAG3']//ancestor::tr//td[2]");
+        vars.put("SAG4 Graded at", "//table//td[text()='SAG4']//ancestor::tr//td[2]");
+        vars.put("SAG5 Graded at", "//table//td[text()='SAG5']//ancestor::tr//td[2]");
+        vars.put("SAG6 Graded at", "//table//td[text()='SAG6']//ancestor::tr//td[2]");
+        vars.put("SAG7 Graded at", "//table//td[text()='SAG7']//ancestor::tr//td[2]");
+        vars.put("SAG8 Graded at", "//table//td[text()='SAG8']//ancestor::tr//td[2]");
+        vars.put("SAG8 Details button", "//td[text()='SAG8']//ancestor::tr/td/a");
+        vars.put("test result block", "//div[@class='result']/div[1]");
+        vars.put("test result block underline", "//div[@class='result']/div[2]");
+//      vars.keySet().stream().map(key -> key + " : " + vars.get(key)).forEach(System.out::println);
     }
 }
