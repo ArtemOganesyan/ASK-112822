@@ -34,4 +34,5 @@ Feature: My tests for teacher's password
     Then I type "1234ab" into element with xpath "//input[@formcontrolname='password']"
     Then I type "12 345" into element with xpath "//input[@formcontrolname='newPassword']"
     Then I click on element with xpath "//input[@formcontrolname='confirmPassword']"
-    And element with xpath "//mat-form-field[1]" should contain text "Whitespaces are not allowed"
+    Then I take screenshot
+    And element with xpath "//mat-error[1]" should contain text "Whitespaces are not allowed"
